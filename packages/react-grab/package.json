@@ -1,5 +1,5 @@
 {
-  "name": "react-grab",
+  "name": "@gusb.dev/react-grab",
   "version": "0.0.67",
   "description": "Grab any element in your app and give it to Cursor, Claude Code, or other AI coding agents.",
   "keywords": [
@@ -9,13 +9,13 @@
     "agent",
     "context"
   ],
-  "homepage": "https://react-grab.com",
+  "homepage": "https://github.com/gus-bn/react-grab",
   "bugs": {
-    "url": "https://github.com/aidenybai/react-grab/issues"
+    "url": "https://github.com/gus-bn/react-grab/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aidenybai/react-grab.git"
+    "url": "git+https://github.com/gus-bn/react-grab.git"
   },
   "license": "MIT",
   "author": {

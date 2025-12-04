@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "ami-sdk": "^0.0.1",
-    "react-grab": "workspace:*"
+    "@gusb.dev/react-grab": "workspace:*"
   }
 }

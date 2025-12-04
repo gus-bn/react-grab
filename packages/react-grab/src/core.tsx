@@ -125,7 +125,7 @@ export const init = (rawOptions?: Options): ReactGrabAPI => {
     enabled: true,
     keyHoldDuration: 200,
     allowActivationInsideInput: true,
-    maxContextLines: 3,
+    maxContextLines: 10,
     ...scriptOptions,
     ...rawOptions,
   };

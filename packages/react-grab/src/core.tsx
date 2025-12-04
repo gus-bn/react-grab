@@ -164,23 +164,6 @@ export const init = (rawOptions?: Options): ReactGrabAPI => {
         `background: #330039; color: #ffffff; border: 1px solid #d75fcb; padding: 4px 4px 4px 24px; border-radius: 4px; background-image: url("${logoDataUri}"); background-size: 16px 16px; background-repeat: no-repeat; background-position: 4px center; display: inline-block; margin-bottom: 4px;`,
         "",
       );
-      if (navigator.onLine && version) {
-        fetch(`https://www.react-grab.com/api/version?t=${Date.now()}`, {
-          referrerPolicy: "origin",
-          keepalive: true,
-          priority: "low",
-          cache: "no-store",
-        })
-          .then((res) => res.text())
-          .then((latestVersion) => {
-            if (latestVersion && latestVersion !== version) {
-              console.warn(
-                `[React Grab] v${version} is outdated (latest: v${latestVersion})`,
-              );
-            }
-          })
-          .catch(() => null);
-      }
     } catch {}
   };
 
@@ -774,7 +757,10 @@ export const init = (rawOptions?: Options): ReactGrabAPI => {
         if (element) {
           const bounds = createElementBounds(element);
           const selectionCenterX = bounds.x + bounds.width / 2;
-          return { x: selectionCenterX + copyOffsetFromCenterX(), y: copyStartY() };
+          return {
+            x: selectionCenterX + copyOffsetFromCenterX(),
+            y: copyStartY(),
+          };
         }
         return { x: copyStartX(), y: copyStartY() };
       }
@@ -814,7 +800,9 @@ export const init = (rawOptions?: Options): ReactGrabAPI => {
               if (!stack) return;
               for (const frame of stack) {
                 if (frame.source && isSourceFile(frame.source.fileName)) {
-                  setSelectionFilePath(normalizeFileName(frame.source.fileName));
+                  setSelectionFilePath(
+                    normalizeFileName(frame.source.fileName),
+                  );
                   setSelectionLineNumber(frame.source.lineNumber);
                   return;
                 }
